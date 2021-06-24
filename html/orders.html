@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Список заявок</title>
+    </head>
+    <body>
+        <table border="1">
+            <thead><th>ID заявки</th><th>Описание</th><th>Дата заявкт</th><th>Дата закрытия</th><th>Дата исполнения</th></thead>
+            {{range . }}
+            <tr>
+                <td>{{.Order_ID}}</td>
+                <td>{{.Description}}</td>
+                <td>{{.Order_date.Format "Jan 02, 2006" }}</td>
+                <td>{{.Close_date.Format "Jan 02, 2006" }}</td>
+                <td>{{.Master_date.Format "Jan 02, 2006" }}</td>
+                <td><a href="/edit/{{.Order_ID}}">Изменить</a>
+                </td>
+            </tr>
+            {{end}}
+        </table>
+        <form method="get" action="/">
+            <button type="submit">Назад</button>
+        </form>
+    </body>
+</html>

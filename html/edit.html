@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Изменение заявки</title>
+    </head>
+    <body>
+        <h3>Изменение заявки</h3>
+        <form method="POST">
+            <input type="hidden" name="id" value="{{.Order_ID}}" />
+            <label>Описание</label><br>
+            <input type="text" name="description" value="{{.Description}}" /><br><br>
+            <label>Дата ремонта</label><br>
+            <input type="text" name="master_date" value="{{.Master_date.Format "Jan 02, 2006"}}" /><br><br>
+            <label>Дата закрытия заявки</label><br>
+            <input type="text" name="close_date" value="{{.Close_date.Format "Jan 02, 2006"}}" /><br><br>
+            <input type="submit" value="Обновить" />
+        </form>
+    </body>
+</html>
